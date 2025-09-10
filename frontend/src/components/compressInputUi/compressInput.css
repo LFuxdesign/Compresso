@@ -1,0 +1,303 @@
+.compressContainer {
+    padding: 20px;
+    width: calc(92vw - 40px);
+    height: calc(92vh - 40px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    will-change: background, backdrop-filter, background-image, opacity;
+    transition: background, opacity, transform .3s var(--ease-in-out);
+    gap: 50px;
+    overflow: hidden;
+}
+
+.compressContainer.out {
+    opacity: 0;
+    transform: translate(-50%, -52%);
+    visibility: hidden;
+}
+
+.compressContainer.hasImages {
+    background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23591C93' /%3E%3Cstop offset='50%25' stop-color='%23943A78' /%3E%3Cstop offset='100%25' stop-color='%23E36235' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='none' stroke='url(%23grad)' stroke-width='5' rx='20' ry='20' stroke-dasharray='0' stroke-dashoffset='0' stroke-linecap='square'/%3E%3C/svg%3E") !important;
+}
+
+.compressContainer *:not(.returnBtn) {
+    user-select: none;
+    pointer-events: none;
+}
+
+.compressContainer.permitClick * {
+    pointer-events: auto !important;
+}
+
+.compressContainer span,
+.compressContainer h2 {
+    background: var(--default-gradient);
+    background-clip: text;
+    color: transparent;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.compressContainer span.hide,
+.compressContainer .messageContainer.hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+}
+
+.compressComponent.returnBtn {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.compressContainer .compressBtn {
+    width: 342px !important;
+    flex-shrink: 0;
+}
+
+.compressContainer .compressBtn.processing {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.5;
+    filter: saturate(0);
+}
+
+.compressComponent.returnBtn:hover {
+    transform: scale(1.05) !important;
+}
+
+.compressContainer .lastBtns * {
+    font-size: 16px;
+}
+
+.compressContainer .lastBtns {
+    width: 160px !important;
+}
+
+.compressContainer .lastBtns.compressAgain {
+    width: 230px !important;
+}
+
+.compressContainer .outputSelector .inputContainer input:not([type='range']) {
+    display: none;
+}
+
+.compressContainer .outputSelector .inputContainer {
+    position: relative;
+    overflow: hidden;
+    --padding: 20px;
+    width: 300px;
+    height: calc(110px - var(--padding) * 2);
+    padding: var(--padding);
+    border: 1px solid #a3a3a3;
+    border-radius: var(--default-radius);
+}
+
+.compressContainer .outputSelector .inputContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #dee0e2;
+    z-index: -1;
+}
+
+.compressContainer .outputSelector .inputContainer label {
+    position: unset;
+}
+
+.compressContainer .outputSelector .inputContainer #remember {
+    display: none;
+}
+
+.compressContainer .outputSelector .inputContainer .checkmark {
+    width: 25px;
+    height: 25px;
+    border-radius: calc(var(--default-radius) / 2.5);
+    cursor: pointer;
+    transition: all .2s var(--ease-in-out);
+    border: 1px solid #0003;
+}
+
+.compressContainer .outputSelector .inputContainer input[type='checkbox']+.checkmark {
+    position: relative;
+    overflow: hidden;
+}
+
+.compressContainer .outputSelector .inputContainer input[type='checkbox']+.checkmark::after {
+    content: '';
+    background: var(--default-gradient);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s var(--ease-in-out);
+    z-index: -1;
+}
+
+.compressContainer .outputSelector .inputContainer input[type='checkbox']:checked+.checkmark::after {
+    opacity: 1;
+}
+
+.compressContainer .outputSelector .inputContainer input[type='checkbox']:checked+.checkmark {
+    /* background: var(--default-gradient); */
+    box-shadow: 0px 0px 20px #00000038;
+}
+
+.compressContainer .outputSelector .inputContainer input[type='checkbox']:valid+label {
+    transform: none;
+}
+
+.compressContainer .outputSelector .inputContainer * {
+    font-family: 'Comfortaa', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.compressContainer .outputSelector .inputContainer .divider {
+    height: 80%;
+    width: 2px;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 20px;
+}
+
+.compressContainer .outputSelector .inputContainer h3 {
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.compressContainer .outputSelector .inputContainer span {
+    color: #000;
+    background-clip: unset;
+    background: unset;
+    font-weight: bold;
+}
+
+.compressContainer .outputSelector .inputContainer .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    overflow: hidden;
+    border-radius: var(--default-radius);
+}
+
+/* .compressContainer .outputSelector .inputContainer .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 2px solid #591C93;
+  border-radius: 50%;
+  margin-top: -5px; /* Alinha o thumb com a track 
+  position: relative;
+  z-index: 2;
+} */
+
+
+.compressContainer .outputSelector .inputContainer .slider::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #ccca;
+    border-radius: 16px;
+}
+
+.compressContainer .outputSelector .inputContainer .slider::-moz-range-track {
+    height: 15px;
+    background: #ccca;
+    border-radius: 16px;
+}
+
+.compressContainer .outputSelector .inputContainer .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #943A78;
+    box-shadow: -407px 0 0 400px #943A78;
+}
+
+.compressContainer .outputSelector .inputContainer .slider::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #943A78;
+    box-shadow: -407px 0 0 400px #943A78;
+}
+
+.compressContainer .scrollContainer {
+    position: absolute;
+    padding: 20px 0;
+    width: 95%;
+    max-height: calc(98% - 40px);
+    gap: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow-y: auto;
+    justify-content: flex-start;
+    border-radius: var(--default-radius);
+    overflow-x: hidden;
+}
+
+.compressContainer .scrollContainer::-webkit-scrollbar{
+    width: 3px;
+}
+
+.compressContainer .scrollContainer * {
+    flex-shrink: 0;
+}
+
+.compressContainer .inputsFrame {
+    flex-wrap: wrap;
+    max-width: 98%;
+}
+
+@media (width < 800px) {
+    .compressContainer .scrollContainer {
+        padding-top: 80px;
+        max-height: calc(98% - 100px);
+    }
+    .compressComponent.returnBtn{
+        top: 50px;
+    }
+}
+
+@media(width < 460px){
+    .compressContainer .outputSelector .inputContainer{
+        max-width: 100%;
+    }
+}
+
+@media(width <=500px) {
+    .compressContainer .outputSelector{
+        position: relative;
+    }
+    .compressContainer .compressBtn *{
+        font-size: 14px;
+    }
+    .compressContainer .lastBtns, .compressContainer .outputSelector {
+        max-width: 99% !important;
+    }
+    .compressContainer .compressBtn{
+        max-width: 97%!important;
+    }
+    .compressContainer .outputSelector .inputContainer{
+        max-width: calc(99% - 40px);
+    }
+}
+
+@media (height < 395px) {
+    .compressComponent.returnBtn{
+        top: 40px;
+    }
+}

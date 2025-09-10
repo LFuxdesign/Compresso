@@ -1,0 +1,353 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: #fff0;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background: #d8d8d8;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a9a9a9;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+
+::-webkit-scrollbar-thumb:active {
+  background: #777;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited, a:hover, a:active {
+  color: unset;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Thinltalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-ExtraLightltalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Lightltalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Mediumltalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-SemiBoldltalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Boldltalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-ExtraBoldltalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/Poppins/Poppins-Blackltalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('./assets/Fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('./assets/Fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+label,
+input {
+  text-rendering: geometricPrecision;
+  font-family: 'Sora', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.ds-block{
+  display: block;
+}
+
+input {
+  border: 1px solid transparent;
+}
+
+.invalidInput {
+  border: 1px solid red;
+}
+
+.validInput {
+  border: 1px solid #1a9d1a;
+}
+
+.containerPopup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff05;
+  width: 100vw;
+  height: 100%;
+  z-index: 9999999;
+  backdrop-filter: blur(0px);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.transition02{
+  transition: all .2s var(--ease-in-out);
+}
+
+.transition {
+  transition: all .3s var(--ease-in-out);
+}
+
+.transition05 {
+  transition: all .5s var(--ease-in-out);
+}
+
+.transition1{
+  transition: all 1s var(--ease-in-out);
+}
+
+.entryAnimation,
+.outAnimation {
+  will-change: opacity, transform, filter;
+}
+
+.entryAnimation, .entryAnimationStyle {
+  transform: translate3d(0, -10px, 0);
+  opacity: 0;
+  animation: forwards entryAni .5s var(--animations);
+}
+
+.entryAnimation.opacityAni {
+  opacity: 0;
+  animation: forwards entryAniOpacity 1s var(--animations);
+}
+
+.entryAnimation.noBlur {
+  opacity: 0;
+  animation: forwards entryAniNoBlur .5s var(--animations);
+}
+
+.outAnimation {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  animation: forwards outAnimation .5s var(--animations);
+}
+
+
+@keyframes entryAni {
+  0% {
+    filter: blur(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes entryAniNoBlur {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes entryAniOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes outAnimation {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, -10px, 0);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.useObserver {
+  opacity: 0;
+}
+

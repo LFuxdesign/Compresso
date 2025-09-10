@@ -1,0 +1,426 @@
+body.loginPage #root {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+}
+
+body.loginPage #main {
+    width: 100vw;
+}
+
+.authContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.authContainer .imageContainer,
+.authContainer .formsContainer {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    will-change: width, height, opacity, border, border-radius;
+}
+
+.authContainer .imageContainer img {
+    --padding: 10px;
+    width: calc(100% - var(--padding) * 2);
+    height: calc(100% - var(--padding) * 2);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.authContainer .attribution {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: rgba(255, 255, 255, .8);
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.authContainer .attribution a:hover {
+    text-decoration: underline;
+}
+
+.authContainer .imageContainer {
+    position: fixed;
+    left: 0;
+    user-select: none;
+}
+
+.authContainer .formsContainer {
+    background: linear-gradient(#fff, #fff);
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(60px);
+    min-height: 100%;
+    height: unset;
+}
+
+.authContainer .formsContainer .frame form{
+    position: relative;
+}
+
+.authContainer .formsContainer .frame form .returnBtn{
+    align-self: flex-start;
+}
+
+.authContainer .formsContainer .frame,
+.authContainer .formsContainer .frame form,
+.authContainer .formsContainer .frame form .inputContainer,
+.authContainer .formsContainer .frame .text {
+    gap: 20px;
+}
+
+.authContainer .formsContainer .frame form .formTitle {
+    width: 100%;
+    text-align: left;
+    color: transparent;
+    background: linear-gradient(to right, #1F2714, #3D4E3A, #6D7259);
+    background-clip: text;
+    width: fit-content;
+    align-self: flex-start;
+    transform: translateY(25px);
+    z-index: 2;
+}
+
+.authContainer .formsContainer .frame form .formTitle.inRegisterPage {
+    transform: translateY(0px);
+}
+
+.authContainer .formsContainer .frame form .inputContainer {
+    position: relative;
+    width: 100%;
+}
+
+.authContainer .formsContainer .frame form .animationContainer {
+    justify-content: center;
+    opacity: 0;
+    height: 0px;
+    visibility: hidden;
+    transition: all .5s var(--ease-in-out);
+    gap: 0;
+    width: 100%;
+}
+
+.authContainer .formsContainer .frame form .animationContainer.show {
+    transform: translate(0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    height: 50px;
+    visibility: visible;
+    margin: 10px 0px;
+}
+
+.authContainer .formsContainer .frame form .animationContainer.registerModeErro.show {
+    height: 110px;
+    gap: 20px;
+}
+
+.authContainer .erro {
+    color: #f00;
+    text-align: left;
+}
+
+.authContainer .success {
+    color: #1c8f1c;
+    text-align: left;
+}
+
+.authContainer .formsContainer .frame {
+    width: 60%;
+    margin: 20px 0;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input {
+    transition: border-color .3s var(--ease-in-out);
+    border: 1px solid #0003;
+    background: transparent;
+    background: #fff;
+}
+
+input:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input,
+.authContainer .formsContainer .frame form .inputContainer .submitBtn {
+    padding: 10px 32px;
+    width: 100%;
+    height: 50px;
+    border-radius: var(--default-radius);
+}
+
+.authContainer .formsContainer .frame form .inputContainer input:focus+label,
+.authContainer .formsContainer .frame form .inputContainer input:valid+label,
+.authContainer .formsContainer .frame form .inputContainer input:not(:placeholder-shown)+label {
+    transform: translate(-1%, -140%);
+    font-size: 14px;
+    background: #fff;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input.wrong {
+    border-color: #f00 !important;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input.wrong+label {
+    color: #f00;
+}
+
+.authContainer .formsContainer .frame form .inputContainer .forgotPassword {
+    color: #0005;
+    padding: 5px;
+    cursor: pointer;
+    transition: color .2s var(--ease-in-out);
+}
+
+.authContainer .formsContainer .frame form .inputContainer .forgotPassword:hover {
+    color: #000;
+}
+
+.authContainer .formsContainer .frame form .inputContainer label {
+    position: absolute;
+    left: 5%;
+    transition: all .3s var(--ease-in-out);
+    padding: 5px;
+    border-radius: calc(var(--default-radius) /2);
+    color: #0009;
+    cursor: text;
+}
+
+.authContainer .formsContainer .frame form .inputContainer .submitBtn {
+    position: relative;
+    border: 2px solid;
+    border-radius: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(to right, #1F2714, #3D4E3A, #6D7259);
+    color: #fff;
+}
+
+.authContainer .formsContainer .frame form .inputContainer .showPassword {
+    position: absolute;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 100%;
+    user-select: none;
+}
+
+.authContainer .formsContainer .frame form .inputContainer .showPassword:hover{
+    border: 1px solid var(--shadowBlack);
+}
+
+.authContainer .formsContainer .frame form .inputContainer .passwordInput{
+    padding: 10px 15% 10px 32px;
+}
+
+/* 
+.authContainer .formsContainer .frame form .inputContainer .submitBtn::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    background: var(--default-gradient);
+    z-index: -1;
+    border-radius: calc(var(--default-radius) + 2px);
+
+} */
+
+.authContainer .formsContainer .frame form .inputContainer .submitBtn[aria-disabled="true"] {
+    filter: saturate(0);
+    opacity: .5;
+    pointer-events: none;
+    cursor: not-allowed;
+    user-select: none;
+}
+
+/* .authContainer .formsContainer .frame form .inputContainer .submitBtn::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    opacity: 0;
+    background: #fff2;
+    height: 100%;
+    border-radius: 20px;
+    transition: all .3s var(--ease-in-out);
+} */
+
+.authContainer .formsContainer .frame form .inputContainer .submitBtn:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+.authContainer .formsContainer .frame form .inputContainer .submitBtn:hover {
+    transform: scale(1.01);
+    color: #fff;
+}
+
+.authContainer .formsContainer .frame form .inputContainer .submitBtn:active {
+    transform: scale(.99);
+    transition-duration: .15s;
+}
+
+.authContainer .formsContainer .frame form .inputContainer.checkbox label {
+    position: unset;
+}
+
+.authContainer .formsContainer .frame form .inputContainer #remember {
+    display: none;
+}
+
+.authContainer .formsContainer .frame form .inputContainer .checkmark {
+    width: 25px;
+    height: 25px;
+    border-radius: calc(var(--default-radius) / 2.5);
+    cursor: pointer;
+    transition: all .2s var(--ease-in-out);
+    border: 1px solid #0003;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input[type='checkbox']+.checkmark {
+    position: relative;
+    overflow: hidden;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input[type='checkbox']+.checkmark::after {
+    content: '';
+    background: var(--default-gradient);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s var(--ease-in-out);
+    z-index: -1;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input[type='checkbox']:checked+.checkmark::after {
+    opacity: 1;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input[type='checkbox']:checked+.checkmark {
+    /* background: var(--default-gradient); */
+    box-shadow: 0px 0px 20px #00000038;
+}
+
+.authContainer .formsContainer .frame form .inputContainer input[type='checkbox']:valid+label {
+    transform: none;
+}
+
+
+.authContainer .formsContainer .frame form .registerLinkText {
+    color: #000a;
+    font-size: 16px;
+    text-align: center;
+}
+
+.authContainer .formsContainer .frame form .registerLink {
+    background: var(--default-gradient);
+    color: transparent;
+    background-clip: text;
+}
+
+.authContainer .formsContainer .frame form .registerLink:hover {
+    font-weight: 500;
+}
+
+.authContainer .formsContainer .frame form .registerLinkText.inRegisterPage {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-10px);
+    position: absolute;
+}
+
+
+@media (width < 720px) {
+    .authContainer .formsContainer .frame {
+        width: 80%;
+    }
+}
+
+@media(width < 600px) {
+    .authContainer .formsContainer {
+        width: 100%;
+        transform: translateY(40vh);
+        border-radius: 20px 20px 0px 0px;
+        padding: 30px 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: unset;
+        min-height: unset;
+        gap: 30px;
+        background: linear-gradient(rgba(255, 255, 255, .8), #fff 20%);
+    }
+
+    .authContainer .imageContainer {
+        width: 100%;
+        height: 55vh;
+    }
+
+    .authContainer .imageContainer img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    .authContainer .attribution {
+        top: 5px;
+        right: 15px;
+        left: unset;
+        bottom: unset;
+        animation: attrAni 1s var(--ease-in-out);
+        z-index: 99999999;
+    }
+    .authContainer .formsContainer .frame{
+        transform: none;
+    }
+
+    .authContainer .formsContainer .frame .inRegisterPage{
+        margin: 20px 0px 0px 0px;
+    }
+
+    .authContainer .formsContainer .frame form .returnBtn{
+        position: absolute;
+        top: -25px;
+    }
+
+    .authContainer .formsContainer .frame form .returnBtn.inRegisterPage{
+        top: -50px;
+    }
+}
+
+
+@keyframes attrAni {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+        ;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* @media(height < 550px) and (width > 600px){
+    .authContainer .formsContainer .frame{
+        align-self: flex-start;
+        margin-top: 20px;
+    }
+} */

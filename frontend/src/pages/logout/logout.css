@@ -1,0 +1,41 @@
+.logout-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+}
+
+.logout-content {
+  text-align: center;
+  color: #333;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.logout-content h1 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #444;
+}
+
+.logout-content p {
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Spinner animado */
+.spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  border: 4px solid #943A78;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 2s var(--ease-in-out) infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1080deg);
+  }
+}

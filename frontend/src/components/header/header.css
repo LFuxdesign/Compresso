@@ -1,0 +1,114 @@
+header {
+    --paddingW: var(--pagePadding);
+    --paddingH: 20px;
+    width: calc(100vw - var(--paddingW) * 2);
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: var(--paddingH) var(--paddingW);
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 50%;
+    transform: translate(-50%);
+    z-index: 999;
+}
+
+header * {
+    font-size: 18px;
+}
+
+header .profileButton, header .profileButton * {
+    user-select: none;
+    cursor: pointer;
+}
+
+header.inAuthPage {
+    margin: unset;
+    transform: unset;
+    left: 5%;
+    top: 10px;
+    --paddingW: unset;
+    width: calc(100vw - var(--paddingW) * 2);
+}
+
+header .logoutContainer {
+    position: absolute;
+    padding: 10px 20px;
+    right: 12%;
+    top: 102px;
+    background: var(--whiteBlur);
+    backdrop-filter: var(--default-blur);
+    border: 1px solid var(--shadowBlack);
+    border-radius: var(--default-radius);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+header .logoutContainer.hide{
+    visibility: hidden;
+}
+
+header .logoutContainer:hover{
+    transform: scale(1.03)!important;
+}
+
+header .logoutContainer:active{
+    transform: scale(0.97)!important;
+}
+
+header .logoutContainer .logoutBtn{
+    gap: 10px;
+}
+
+header .logoutContainer .logoutBtn span{
+    background: var(--default-gradient);
+    background-clip: text;
+    color: transparent;
+}
+@media (width < 635px) {
+    header {
+        --paddingH: 10px;
+        height: 80px;
+    }
+
+    #root {
+        padding: 100px var(--pagePadding);
+    }
+
+    header .logo {
+        padding: 5px !important;
+        width: 125px !important;
+    }
+
+    header .headerBtn span {
+        font-size: 16px !important;
+    }
+
+    header .loginBtn {
+        width: 75px !important;
+    }
+
+    .header .expandedButtonLink .iconContainer {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    header .logoutContainer{
+        top: 80px;
+        padding: 6px 14px;
+    }
+    header .logoutContainer .logoutBtn span{
+        font-size: 14px;
+    }
+
+    header .logoutContainer .logoutBtn svg{
+        width: 18px!important;
+    }
+}
+
+@media(width < 460px) {
+    .header .expandedButtonLink .text {
+        font-size: 10px;
+    }
+}

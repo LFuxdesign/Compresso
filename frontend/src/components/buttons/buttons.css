@@ -1,0 +1,92 @@
+.button {
+    border: none;
+    padding: 15px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 35px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px #0000;
+    user-select: none;
+    object-fit: cover;
+    object-position: center;
+    backdrop-filter: var(--default-blur);
+}
+
+.button:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 20px #0003;
+    border: var(--borderHover);
+}
+
+.button:active {
+    transform: scale(0.95);
+    transition: all .2s var(--ease-in-out);
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    background: var(--backgroundHover);
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+    transition: all .3s var(--ease-in-out);
+    z-index: -1;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: var(--radius);
+    padding: var(--gradientBorderWidth, 0px);
+    background: var(--gradientBorderColor, transparent);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
+.button:hover .content .buttonText {
+    background: var(--colorHover) !important;
+    background-clip: text !important;
+}
+
+.button .content {
+    justify-content: space-around;
+    width: 95%;
+}
+
+.button .content .buttonText {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+    text-wrap: nowrap;
+    background-clip: text !important;
+    color: transparent;
+}
+
+.button .iconButton {
+    width: 20%;
+}
+
+.gradientBorderButton .button:hover {
+    transform: scale(1);
+    background: transparent !important;
+    box-shadow: none;
+    backdrop-filter: blur(0px);
+}

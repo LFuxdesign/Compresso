@@ -1,0 +1,40 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 134px var(--pagePadding);
+  text-align: center;
+  transition: padding .5s var(--ease-in-out);
+}
+
+:root {
+  --whiteBlur: rgba(255, 255, 255, .7);
+  --black: #0d0d0d;
+  --shadowBlack: rgba(0, 0, 0, 0.2);
+  --default-blur: blur(10px);
+  --default-radius: 20px;
+  --ease-in-out: cubic-bezier(0.68, 0.12, 0.34, 0.8);
+  --animations: cubic-bezier(0.68, 0.12, 0.34, 0.8);
+  --animation-menu-duration: .5s;
+  --default-gradient: linear-gradient(90deg, #591C93, #943A78, #E36235);
+  --pagePadding: 10vw
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (display-mode: standalone) {
+  * {
+    user-select: none;
+  }
+}
+
+
+@media (width <=500px) {
+    #root {
+        padding-bottom: 40px!important;
+    }
+  }

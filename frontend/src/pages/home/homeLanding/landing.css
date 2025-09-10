@@ -1,0 +1,227 @@
+.landing {
+    gap: calc(50% - 40%);
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.landing .landingContent {
+    max-width: 40%;
+}
+
+.landing .landingContent .actionBtn {
+    margin-top: 20px;
+}
+
+.landing .landingContent .actionBtn * {
+    font-weight: normal !important;
+}
+
+.landingTitle {
+    background: var(--default-gradient);
+    background-clip: text;
+    background-repeat: no-repeat;
+    color: transparent;
+    font-size: 40px;
+    text-align: left;
+}
+
+.landingTitle * {
+    background: var(--default-gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.landing .landingText {
+    font-size: 27px;
+    max-width: 90%;
+    text-align: left;
+    font-weight: 300;
+    color: var(--text-color);
+    margin-top: 10px;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.landing .landingTextMark {
+    background: linear-gradient(45deg, #591C93, #943A78, #E36235, #E36235, #943A78, #591C93);
+    background-size: 500% 100%;
+    background-repeat: no-repeat;
+    animation: gradientMove 8s var(--ease-in-out) infinite alternate;
+    border-radius: 100px;
+    display: inline;
+    padding: 1px 10px;
+    color: white;
+    font-size: 20px;
+    will-change: background-position;
+}
+
+.landing .landingImageContainer {
+    max-width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.landingAppSteps {
+    width: 100%;
+    margin-top: 5%;
+    gap: 20px;
+}
+
+.landingAppSteps .items .item {
+    gap: 20px;
+    justify-content: flex-start;
+    max-width: 330px;
+}
+
+.landingAppSteps .items .item svg {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.landingAppSteps .items {
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.landingAppSteps .items .item h2 {
+    text-align: left;
+    font-weight: 500;
+    background: var(--default-gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.landingAppSteps .landingTitle {
+    width: fit-content;
+}
+
+@media(width < 1080px) {
+    .landingTitle {
+        font-size: 28px;
+    }
+
+    .landing .landingText {
+        font-size: 20px;
+    }
+
+    .landing .landingTextMark {
+        font-size: 16px;
+    }
+
+    .landing .landingContent .actionBtn * {
+        font-size: 18px !important;
+    }
+
+    .landingAppSteps .items .item svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .landingAppSteps .items .item h2 {
+        font-size: 16px;
+    }
+
+    .slider-container .attribution {
+        font-size: 11px;
+        bottom: 19px;
+        max-width: 110px;
+    }
+}
+
+@media (width < 910px) {
+    .slider-container .attribution {
+        font-size: 10px;
+        bottom: 19px;
+        max-width: 90px;
+    }
+}
+
+@media (width < 850px) {
+    .landing {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .landing .landingContent,
+    .landing .landingImageContainer {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .landingAppSteps .items {
+        justify-content: center;
+    }
+
+    .landingAppSteps .items .item {
+        max-width: 240px;
+    }
+}
+
+@media (width < 635px) {
+    .landingAppSteps .items .item svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .landingAppSteps .items .item h2 {
+        font-size: 12px;
+    }
+
+    .landingAppSteps .items .item{
+        max-width: 170px;
+    }
+
+
+}
+
+
+@media (width <=500px) {
+    .landingAppSteps .items {
+        gap: 10px;
+    }
+
+    .landingAppSteps .items .item {
+        max-width: 150px;
+        gap: 10px;
+    }
+}
+
+@media (width < 400px) {
+    .landingTitle {
+        font-size: 24px;
+    }
+
+    .landing .landingText {
+        font-size: 18px;
+    }
+
+    .landing .landingTextMark {
+        font-size: 14px;
+    }
+
+    .landing .landingContent .actionBtn {
+        width: 180px !important
+    }
+
+    .landing .landingContent .actionBtn * {
+        font-size: 14px !important;
+    }
+}
+
+@media (width < 350px) {
+    .landingAppSteps .items {
+        justify-content: flex-start;
+    }
+}

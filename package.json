@@ -1,0 +1,42 @@
+{
+  "name": "compresso",
+  "version": "1.0.2",
+  "description": "Compresso - A powerful image compression tool",
+  "main": "main.mjs",
+  "private":"true",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "pack": "cd frontend && npm run build && cd.. && electron-builder --dir",
+    "dist": "cd frontend && npm run build && cd.. && electron-builder"
+  },
+  "build": {
+    "appId": "com.compresso.app",
+    "productName": "Compresso",
+    "files": [
+      "frontend/dist/**/*",
+      "main.mjs",
+      "preload.cjs",
+      "backend/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  },
+  "author": "Leonardo Felipe",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.4",
+    "electron-builder": "^26.0.12",
+    "wait-on": "^8.0.4"
+  },
+  "dependencies": {
+    "sharp": "^0.34.3"
+  }
+}
